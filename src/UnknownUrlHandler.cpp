@@ -22,14 +22,14 @@ QNetworkReply* UnknownUrlHandler::handleRequest(
   if (this->isUnknown(url)) {
     switch(m_mode) {
       case WARN:
-        QTextStream(stderr) <<
-           "Unexpected request: " << url.toString() << endl <<
-           "To block unknown requests:" << endl <<
-           "  page.driver.block_unknown_requests" << endl <<
-           "To allow just this request:" << endl <<
-           "  page.driver.allow_url(\"" << url.toString() << "\")" << endl <<
-           "To allow allow requests from this host:" << endl <<
-           "  page.driver.allow_url(\"" << url.host() << "\")" << endl;
+        //QTextStream(stderr) <<
+        //   "Unexpected request: " << url.toString() << endl <<
+        //   "To block unknown requests:" << endl <<
+        //   "  page.driver.block_unknown_requests" << endl <<
+        //   "To allow just this request:" << endl <<
+        //   "  page.driver.allow_url(\"" << url.toString() << "\")" << endl <<
+        //   "To allow allow requests from this host:" << endl <<
+        //   "  page.driver.allow_url(\"" << url.host() << "\")" << endl;
         break;
       case BLOCK:
         return new NetworkReplyProxy(new NoOpReply(request), this);
